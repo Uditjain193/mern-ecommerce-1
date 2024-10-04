@@ -26,7 +26,8 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(checkauth());
+    const token=JSON.parse(sessionStorage.getItem("token"))
+    dispatch(checkauth(token));
   }, [dispatch]);
 
   if (isloading) return <Skeleton className="w-[800] bg-black h-[600px]" />;

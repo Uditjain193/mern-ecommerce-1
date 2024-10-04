@@ -1,13 +1,18 @@
-import { logout } from '../../redux/auth'
+import {  resettokenandcredentials } from '../../redux/auth'
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { Button } from '../ui/button'
 import { AlignJustify, LogOut } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 const Header = ({setopen}) => {
   const dispatch=useDispatch()
+  const navigate=useNavigate()
   function handlelogout(){
-    dispatch(logout())
+    //dispatch(logout())
+    dispatch(resettokenandcredentials())
+    sessionStorage.clear()
+    navigate("/auth/login")
   }
   return (
     <header className="flex items-center justify-between px-4 py-3 bg-background border-b">

@@ -11,7 +11,7 @@ import { HousePlug, LogOut, Menu, ShoppingCart, UserCog } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { Button } from "../ui/button";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../redux/auth";
+import {  resettokenandcredentials } from "../../redux/auth";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -64,7 +64,10 @@ function HeaderRightContent() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   function handleLogout() {
-    dispatch(logout());
+    //dispatch(logout());
+    dispatch(resettokenandcredentials())
+    sessionStorage.clear()
+    navigate('/auth/login')
   }
   useEffect(() => {
     dispatch(fetchcartitem(user?.id));
