@@ -118,7 +118,7 @@ const logoutuser = (req, res) => {
 const authmiddleware=async(req,res,next)=>{
   const authheader=req.headers['authorization']
   const token=authheader&& authheader.split(' ')[1]
-  if(!token || token === 'null'){
+  if(!token  || token === 'null'){
       return res.status(401).json({
           success: false,
           message: "Unauthorised user!",
