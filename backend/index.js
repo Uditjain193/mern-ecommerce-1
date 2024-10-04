@@ -4,7 +4,7 @@ const app = express()
 const cors = require("cors")
 app.use(
   cors({
-    origin: "https://mern-ecommerce-1-2.onrender.com",
+    origin: process.env.CLIENT_BASE_URL,
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
