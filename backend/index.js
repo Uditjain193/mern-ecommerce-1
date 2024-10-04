@@ -2,9 +2,6 @@ require("dotenv").config()
 const express = require("express")
 const app = express()
 const cors = require("cors")
-const cookieparser = require("cookie-parser")
-const fileupload = require("express-fileupload")
-
 app.use(
   cors({
     origin: "https://mern-ecommerce-1-2.onrender.com",
@@ -19,6 +16,8 @@ app.use(
     credentials: true,
   })
 );
+const cookieparser = require("cookie-parser")
+const fileupload = require("express-fileupload")
 app.use(cookieparser());
 app.use(fileupload({
   useTempFiles: true,
