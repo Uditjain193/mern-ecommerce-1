@@ -7,7 +7,7 @@ const fileupload = require("express-fileupload")
 
 app.use(
   cors({
-    origin: process.env.CLIENT_BASE_URL,
+    origin: "https://mern-ecommerce-1-2.onrender.com",
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
