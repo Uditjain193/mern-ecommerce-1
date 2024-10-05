@@ -5,6 +5,7 @@ require("dotenv").config()
 const axios=require("axios")
 const imageupload = async (req, res) => {
     try {
+        console.log(req.files.file)
         const image = req.files.file;
         
         // const formData = new FormData();
