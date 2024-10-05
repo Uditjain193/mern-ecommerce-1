@@ -12,11 +12,11 @@ const ProductTile = ({
   return (
     <Card className="w-full max-w-sm mx-auto">
       <div>
-        <div className="relative">
+        <div className="relative w-full h-[300px] bg-white border rounded-lg shadow-lg">
           <img
             src={product?.image}
             alt={product?.title}
-            className="w-full h-[300px] object-cover rounded-t-lg"
+            className="w-full h-full object-cover rounded-md"
           />
         </div>
         <CardContent>
