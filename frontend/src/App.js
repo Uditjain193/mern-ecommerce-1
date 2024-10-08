@@ -28,7 +28,8 @@ function App() {
   useEffect(() => {
     const token=JSON.parse(sessionStorage.getItem("token"))
     dispatch(checkauth(token));
-  }, [dispatch]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (isloading) return <Skeleton className="w-[800] bg-black h-[600px]" />;
 
