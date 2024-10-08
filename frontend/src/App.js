@@ -18,7 +18,7 @@ import Index from "./pages/not-found";
 import Checkk from "./components/common/check-auth";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { checkauth } from "./redux/auth";
+import { checkauth, setcheckauth } from "./redux/auth";
 import { Skeleton } from "./components/ui/skeleton";
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
   useEffect(() => {
     const token=JSON.parse(sessionStorage.getItem("token"))
     if(token===null){
-
+      dispatch(setcheckauth())
       navigate("/auth/login")
       
     }else{

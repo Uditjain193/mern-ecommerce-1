@@ -72,6 +72,11 @@ export const Authslice=createSlice({
             state.isauth=false;
             state.user=null
             state.token=null
+        },
+        setcheckauth:(state,action)=>{
+            state.isloading = false;
+            state.user = null;
+            state.isauth = false;
         }
     },
     extraReducers:(builder)=>{
@@ -125,5 +130,5 @@ export const Authslice=createSlice({
           });
     }
 })
-export const {setuser,resettokenandcredentials}=Authslice.actions
+export const {setuser,resettokenandcredentials,setcheckauth}=Authslice.actions
 export default Authslice.reducer
