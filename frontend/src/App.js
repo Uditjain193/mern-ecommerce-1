@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Layout from "./components/auth/layout";
 import Login from "./pages/auth/login";
 import Register from "./pages/auth/register";
@@ -24,9 +24,14 @@ import { Skeleton } from "./components/ui/skeleton";
 function App() {
   const { user, isauth, isloading } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-
+  const navigate=useNavigate()
   useEffect(() => {
     const token=JSON.parse(sessionStorage.getItem("token"))
+    if(token===null){
+
+      navigate("/auth/login")
+      
+    }
     dispatch(checkauth(token));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

@@ -55,8 +55,7 @@ export const checkauth=createAsyncThunk("/auth/checkauth",
             {
                 headers:{
                     Authorization: `Bearer ${token}`,
-                    "Cache-control":
-                    "no-store,no-cache,must-revalidate,proxy-revalidate"
+                    "Cache-control":"no-store,no-cache,must-revalidate,proxy-revalidate"
                 }
                 
             }
