@@ -31,8 +31,10 @@ function App() {
 
       navigate("/auth/login")
       
+    }else{
+      dispatch(checkauth(token));
     }
-    dispatch(checkauth(token));
+    
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
