@@ -19,7 +19,7 @@ import Checkk from "./components/common/check-auth";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { checkauth, setcheckauth } from "./redux/auth";
-import { Skeleton } from "./components/ui/skeleton";
+
 
 function App() {
   const { user, isauth, isloading } = useSelector((state) => state.auth);
@@ -38,7 +38,7 @@ function App() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (isloading) return <Skeleton className="w-[800] bg-black h-[600px]" />;
+  if (isloading) return <div className=" font-extrabold">Please wait for 30 seconds... connecting to server</div>;
 
   return (
     <div className="flex flex-col overflow-hidden bg-white">
